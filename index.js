@@ -16,7 +16,10 @@ io.on("connection", (socket) => {
 
   let time = new Date()
   socket.on("message",(data)=>{
-    socket.emit("messageBe",{message:data,date:time})
+    let time = new Date()
+    io.emit("messageBe",{message: data, date: time})
+    // grup
+    // socket.broadcast.emit("messageBe",{message:data,date:time})
     console.log(data)
   })
 
